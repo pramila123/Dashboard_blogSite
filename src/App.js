@@ -1,13 +1,14 @@
 
 
-import Navbar from "./components/Navbar/Navbar";
+import Sidebar from "./components/Sidebar/Sidebar";
 import GlobalStyles from "./GlobalStyles";
 
 function App() {
   return (
     <div className="App">
    <GlobalStyles/>
-   <Navbar/>
+   <Sidebar/>
+
     
     </div>
   );

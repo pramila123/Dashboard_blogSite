@@ -7,6 +7,7 @@ const TopNavBar = styled.nav`
   background-color: #EFEFEF;
   font-size: 1.2rem;
   color:#000;
+  
 `;
 const TopContainer = styled.div`
   display: flex;
