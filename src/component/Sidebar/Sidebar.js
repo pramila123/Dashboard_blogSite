@@ -11,7 +11,7 @@ const Sidebar = ({isItemSelected}) => {
   const menuItemsJSX = menuItems.map((item, index) => {
     const isItemSelected = selected === item.name;
     return (
-      <BrowserRouter>
+      
       <Link to={item.to} style={{ textDecoration:"none", color:"#fff"}}>
       <s.MenuItem key={index}
        isItemSelected={isItemSelected}
@@ -20,7 +20,7 @@ const Sidebar = ({isItemSelected}) => {
         {item.name}
       </s.MenuItem>
       </Link>
-      </BrowserRouter>
+    
     );
   });
   return (
