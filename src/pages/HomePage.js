@@ -1,10 +1,18 @@
 import React from 'react'
+import Sidebar from "../components/Sidebar/Sidebar";
+import MainView from "../components/MainView/MainView"
+import styled from 'styled-components';
+
+const HomePageStyled = styled.div`
+display: flex;
+`;
 
 const HomePage = () => {
     return (
-        <div>
-            
-        </div>
+       <HomePageStyled>
+           <Sidebar/>
+           <MainView/>
+       </HomePageStyled>
     )
 }
 

@@ -1,16 +1,23 @@
 
 
-import Sidebar from "./components/Sidebar/Sidebar";
+import Sidebar from "./component/Sidebar/Sidebar";
+import MainView from "./component/MainView/MainView";
 import GlobalStyles from "./GlobalStyles";
+import styled from "styled-components";
+
+const Appstyle = styled.div`
+display:flex;
+`;
 
 function App() {
   return (
-    <div className="App">
+    <Appstyle>
    <GlobalStyles/>
    <Sidebar/>
+   <MainView/>
 
     
-    </div>
+   </Appstyle>
   );
 }
 
