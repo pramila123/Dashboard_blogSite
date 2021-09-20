@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import * as s from "./Sidebar.styles";
 import { menuItems } from "./SidebarMenuData";
-import { BrowserRouter, Link } from "react-router-dom";
+import {  Link } from "react-router-dom";
 
 const Sidebar = ({isItemSelected,click}) => {
   const [selected, setSelected] = useState(menuItems[0].name);

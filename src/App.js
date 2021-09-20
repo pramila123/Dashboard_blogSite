@@ -1,26 +1,18 @@
-
-
-
-
-
-import Sidebar from "./component/Sidebar/Sidebar";
 import MainView from "./component/MainView/MainView";
 import GlobalStyles from "./GlobalStyles";
 import styled from "styled-components";
+import Navbar from "./component/Navbar/Navbar";
 
-const Appstyle = styled.div`
-display:flex;
-`;
+const Appstyle = styled.div``;
 
 function App() {
   return (
     <Appstyle>
-   <GlobalStyles/>
-   <Sidebar/>
-   <MainView/>
+      <GlobalStyles />
+      <Navbar />
 
-    
-   </Appstyle>
+      <MainView />
+    </Appstyle>
   );
 }
 

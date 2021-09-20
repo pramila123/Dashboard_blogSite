@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const SidebarContainer = styled.div`
  
   width:18%;
-  left:${({click})=>(click?"-18% ":"0%")};
+  left:${({click})=>(click? "-18% ":"0%")};
   height: 100vh;
   position: absolute; // Toggler
   transition: 0.2s ease-in all;
