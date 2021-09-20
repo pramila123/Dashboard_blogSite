@@ -1,17 +1,26 @@
 
 
+
+
+
+import Sidebar from "./component/Sidebar/Sidebar";
+import MainView from "./component/MainView/MainView";
 import GlobalStyles from "./GlobalStyles";
-import {BrowserRouter as Router} from 'react-router-dom'
-import HomePage from './pages/HomePage';
+import styled from "styled-components";
+
+const Appstyle = styled.div`
+display:flex;
+`;
+
 function App() {
   return (
-    <div className="App">
+    <Appstyle>
    <GlobalStyles/>
-   <Router>
-   <HomePage/>
-   </Router>
+   <Sidebar/>
+   <MainView/>
+
     
-    </div>
+   </Appstyle>
   );
 }
 

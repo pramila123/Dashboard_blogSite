@@ -1,17 +1,21 @@
 import React from 'react'
-import Navbar from '../components/Navbar/Navbar'
-
-
+import Sidebar from "../component/Sidebar/Sidebar";
+import MainView from "../component/MainView/MainView"
+import styled from 'styled-components';
+import Navbar from '../component/Navbar/Navbar'
+const HomePageStyled = styled.div`
+display: flex;
+`;
 
 const HomePage = () => {
     return (
         <>
-        
-         <Navbar/>
-            
-               
-              
-        </>
+       
+       <HomePageStyled>
+           <Sidebar/>
+           <MainView/>
+       </HomePageStyled>
+       </>
     )
 }
 
