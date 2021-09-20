@@ -2,9 +2,9 @@ import React from 'react'
 
 export const Category = () => {
     return (
-        <div>
+        <h1>
             Category page..........
-        </div>
+        </h1>
     )
 }
 export default Category
