@@ -1,14 +1,14 @@
 
 
-import Sidebar from "./components/Sidebar/Sidebar";
 import GlobalStyles from "./GlobalStyles";
 import {BrowserRouter as Router} from 'react-router-dom'
+import HomePage from './pages/HomePage';
 function App() {
   return (
     <div className="App">
    <GlobalStyles/>
    <Router>
-   <Navbar/>
+   <HomePage/>
    </Router>
     
     </div>

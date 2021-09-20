@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import * as s from "./Sidebar.styles";
 import { menuItems } from "./SidebarMenuData";
 
-const Sidebar = ({isItemSelected}) => {
+const Sidebar = ({isItemSelected,click}) => {
   const [selected, setSelected] = useState(menuItems[0].name);
   const handleMenuItemClick = name => {
     setSelected(name);
@@ -20,7 +20,7 @@ const Sidebar = ({isItemSelected}) => {
   });
   return (
     <div>
-      <s.SidebarContainer>
+      <s.SidebarContainer click={click}>
         <s.SidebarHeader>E-commerce</s.SidebarHeader>
         <s.MenuItemContainer>{menuItemsJSX}</s.MenuItemContainer>
       </s.SidebarContainer>
