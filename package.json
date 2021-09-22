@@ -13,6 +13,7 @@
     "datatables.net": "^1.11.2",
     "datatables.net-dt": "^1.11.2",
     "jquery": "^3.6.0",
+    "material-table": "^1.69.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-icons": "^4.2.0",
