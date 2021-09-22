@@ -1,11 +1,11 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
 export const MainViewContainer = styled.div`
-  width: 80%;
-  padding: 100px;
-  text-align: center;
-  
+  width: 82%;
+  float: left;
+  padding-left: 18%;
+
   h1 {
-    font-size: 2rem
+    font-size: 2rem;
   }
-`
+`;
