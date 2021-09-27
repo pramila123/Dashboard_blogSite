@@ -53,11 +53,7 @@ export const CategoryTableMainDiv = styled.div`
   // display: flex;
   // justify-content: space-between;
 `;
-export const CategoryTableDiv = styled.div`
-  background-color: #ffffff;
-  // width: 100%;
-  padding: 2rem;
-`;
+
 export const SubCategoryTableDiv = styled.div`
   background-color: #ffffff;
   // width: 100%;
