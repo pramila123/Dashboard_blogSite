@@ -8,7 +8,7 @@ export const Category = () => {
     <c.Root>
       <c.Container>
         <Heading />
-        <CategoryAdd />
+        {/* <CategoryAdd /> */}
         <CategoryTable />
       </c.Container>
     </c.Root>

@@ -6,7 +6,7 @@ const AddFiled = () => {
   return (
     <>
       <p.AddMainDiv>
-        <p.AddHeading>Product</p.AddHeading>
+        <p.AddHeading>Add Product</p.AddHeading>
         <TextField
           id="outlined-basic"
           label="Category"

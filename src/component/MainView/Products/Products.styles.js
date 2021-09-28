@@ -57,3 +57,4 @@ export const TableDiv = styled.div`
   // width: 100%;
   padding: 2rem;
 `;
+//up to

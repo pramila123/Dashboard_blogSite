@@ -6,7 +6,7 @@ const CategoryAdd = () => {
   return (
     <>
       <c.AddCategoryMainDiv>
-        <c.AddCategoryHeading>Category</c.AddCategoryHeading>
+        <c.AddCategoryHeading>Add Category</c.AddCategoryHeading>
         <TextField
           id="outlined-basic"
           label="Category"

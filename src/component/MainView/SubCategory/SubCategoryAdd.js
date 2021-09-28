@@ -49,33 +49,38 @@ const CategoryAdd = () => {
   return (
     <>
       <c.AddCategoryMainDiv>
-        <c.AddCategoryHeading>Sub Category</c.AddCategoryHeading>
+        <c.AddCategoryHeading>Add Sub Category</c.AddCategoryHeading>
         <FormControl variant="filled" margin="dense">
           {/* <InputLabel id="demo-customized-select-label">Age</InputLabel> */}
-          <Select
-            labelId="demo-customized-select-label"
-            id="demo-customized-select"
-            input={<BootstrapInput />}
-            style={{ marginBottom: "1rem", width: "20rem" }}
-          >
-            <MenuItem value="">
-              <em>Category</em>
-            </MenuItem>
-            <MenuItem value={10}>Ten</MenuItem>
-            <MenuItem value={20}>Twenty</MenuItem>
-            <MenuItem value={30}>Thirty</MenuItem>
-          </Select>
+          <c.SelectTextfieldMainDiv>
+            <Select
+              labelId="demo-customized-select-label"
+              id="demo-customized-select"
+              input={<BootstrapInput />}
+              style={{ marginBottom: "1rem", width: "20rem" }}
+            >
+              <MenuItem value="">
+                <em>Category</em>
+              </MenuItem>
+              <MenuItem value={10}>Ten</MenuItem>
+              <MenuItem value={20}>Twenty</MenuItem>
+              <MenuItem value={30}>Thirty</MenuItem>
+            </Select>
 
-          <TextField
-            id="outlined-basic"
-            label="Sub Category"
-            variant="outlined"
-            size="small"
-            inputProps={{ style: { fontSize: 15 } }}
-            InputLabelProps={{ style: { fontSize: 15 } }}
-            style={{ width: "20rem", marginBottom: "1rem" }}
-          />
-
+            <TextField
+              id="outlined-basic"
+              label="Sub Category"
+              variant="outlined"
+              size="small"
+              inputProps={{ style: { fontSize: 15 } }}
+              InputLabelProps={{ style: { fontSize: 15 } }}
+              style={{
+                width: "20rem",
+                marginBottom: "1rem",
+                marginLeft: "1rem",
+              }}
+            />
+          </c.SelectTextfieldMainDiv>
           <Button
             variant="outlined"
             color="primary"

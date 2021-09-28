@@ -60,3 +60,7 @@ export const SubCategoryTableDiv = styled.div`
   padding: 2rem;
   margin-top: 1rem;
 `;
+
+export const SelectTextfieldMainDiv = styled.div`
+  display: flex;
+`;
