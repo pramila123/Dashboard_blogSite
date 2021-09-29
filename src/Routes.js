@@ -6,6 +6,7 @@ import Products from "./component/MainView/Products/Products";
 import AboutUs from "./component/MainView/AboutUs/AboutUs";
 import Contacts from "./component/MainView/Contacts/Contacts";
 import SubCategory from "./component/MainView/SubCategory/SubCategory";
+import Order from "./component/MainView/Order/Order";
 
 export const Routes = () => {
   return (
@@ -16,6 +17,7 @@ export const Routes = () => {
       <Route path="/aboutus" component={AboutUs} />
       <Route path="/contacts" component={Contacts} />
       <Route path="/subcategory" component={SubCategory} />
+      <Route path="/order" component={Order} />
     </Switch>
   );
 };

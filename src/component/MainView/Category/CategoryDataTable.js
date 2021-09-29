@@ -13,14 +13,9 @@ import "datatables.net-dt/js/dataTables.dataTables";
 import "datatables.net-dt/css/jquery.dataTables.min.css";
 import $ from "jquery";
 
-//icons
-import { AiOutlineDelete } from "react-icons/ai";
-import { AiOutlineEdit } from "react-icons/ai";
-import { GiBlackBook } from "react-icons/gi";
-
-import Tooltip from "@material-ui/core/Tooltip";
-import Zoom from "@material-ui/core/Zoom";
-import { Link } from "react-router-dom";
+import DeleteIcon from "../../DeleteComponent/DeleteIcon";
+import EditIcon from "../../EditComponent/EditIcon";
+import ViewIcon from "../../ViewComponent/ViewIcon";
 
 function createData(name, calories, fat, carbs, protein) {
   return { name, calories, fat, carbs, protein };
@@ -43,38 +38,6 @@ const useStyle = makeStyles((theme) => ({
   },
   stripNoColor: {
     backgroundColor: "white",
-  },
-  editIcon: {
-    fontSize: "1.2rem",
-    color: "#2653D4",
-    marginLeft: "0.8rem",
-    "&:hover": {
-      backgroundColor: "#84818A",
-      // padding: "0.1rem",
-      borderRadius: "50%",
-      color: "white",
-    },
-  },
-  deleteIcon: {
-    fontSize: "1.2rem",
-    marginLeft: "0.8rem",
-    color: "#EF3B4F",
-    "&:hover": {
-      backgroundColor: "#84818A",
-      // padding: "0.1rem",
-      borderRadius: "50%",
-      color: "white",
-    },
-  },
-  viewIcon: {
-    fontSize: "1.1rem",
-    color: "#496C83",
-    "&:hover": {
-      backgroundColor: "#84818A",
-      // padding: "0.1rem",
-      borderRadius: "50%",
-      color: "white",
-    },
   },
 }));
 
@@ -125,21 +88,9 @@ export default function CategoryDataTable() {
               </TableCell>
 
               <TableCell align="right">
-                <Tooltip title="View" TransitionComponent={Zoom} arrow>
-                  <Link>
-                    <GiBlackBook className={classes.viewIcon} />
-                  </Link>
-                </Tooltip>
-                <Tooltip title="Edit" TransitionComponent={Zoom} arrow>
-                  <Link>
-                    <AiOutlineEdit className={classes.editIcon} />
-                  </Link>
-                </Tooltip>
-                <Tooltip title="Delete" TransitionComponent={Zoom} arrow>
-                  <Link>
-                    <AiOutlineDelete className={classes.deleteIcon} />
-                  </Link>
-                </Tooltip>
+                <ViewIcon />
+                <EditIcon />
+                <DeleteIcon />
               </TableCell>
             </TableRow>
           ))}

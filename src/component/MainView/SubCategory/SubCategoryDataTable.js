@@ -12,6 +12,9 @@ import "jquery/dist/jquery.min.js";
 import "datatables.net-dt/js/dataTables.dataTables";
 import "datatables.net-dt/css/jquery.dataTables.min.css";
 import $ from "jquery";
+import ViewIcon from "../../ViewComponent/ViewIcon";
+import EditIcon from "../../EditComponent/EditIcon";
+import DeleteIcon from "../../DeleteComponent/DeleteIcon";
 
 function createData(name, calories, fat, carbs, protein) {
   return { name, calories, fat, carbs, protein };
@@ -61,7 +64,7 @@ export default function SubCategoryDataTable() {
               Category
             </TableCell>
 
-            <TableCell className={classes.tableRow} align="center">
+            <TableCell className={classes.tableRow} align="right">
               Action
             </TableCell>
           </TableRow>
@@ -85,7 +88,11 @@ export default function SubCategoryDataTable() {
                 {row.name}
               </TableCell>
 
-              <TableCell align="center">{row.fat}</TableCell>
+              <TableCell align="right">
+                <ViewIcon />
+                <EditIcon />
+                <DeleteIcon />
+              </TableCell>
             </TableRow>
           ))}
         </TableBody>

@@ -1,13 +1,13 @@
 import React from "react";
 import * as p from "./Products.styles";
-import CategoryDataTable from "./CategoryDataTable";
+import DataTable from "./DataTable";
 
 const Body = () => {
   return (
     <>
       <p.MainDiv>
         <p.TableDiv>
-          <CategoryDataTable />
+          <DataTable />
         </p.TableDiv>
       </p.MainDiv>
     </>
