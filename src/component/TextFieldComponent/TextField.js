@@ -1,11 +1,23 @@
 import React from 'react'
 
-const TextField = () => {
+const TextField = ({
+    name,label,...otherProps
+}) => {
+    const configTextField={
+        fullWidth:true,
+        variant:'outlined',
+        size:'small',
+    ...otherProps,
+    }
     return (
-        <div>
-            
-        </div>
+
+
+        <>
+
+<TextField {...configTextField}/>
+        </>
     )
+    
 }
 
 export default TextField

@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const CategoryRoot = styled.div`
   padding-right: 2px;
   background-color: #efefef;
+  
 `;
 export const CategoryContainer = styled.div`
   height: 85.6vh;

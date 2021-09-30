@@ -4,6 +4,7 @@ import { FaBars } from "react-icons/fa";
 import { Paper } from "@material-ui/core";
 import * as n from "./Navbar.styles";
 import Sidebar from "../Sidebar/Sidebar";
+
 const Navbar = () => {
   const [click, setclick] = useState(false);
   const handleClick=()=>
@@ -26,6 +27,7 @@ const Navbar = () => {
         </n.TopNav>
       </Paper>
       <Sidebar click={click}/>
+      
     </>
   );
 };
