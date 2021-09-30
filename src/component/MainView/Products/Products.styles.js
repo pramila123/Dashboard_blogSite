@@ -3,7 +3,6 @@ import styled from "styled-components";
 export const Root = styled.div`
   padding-right: 2px;
   background-color: #efefef;
-  
 `;
 export const Container = styled.div`
   height: 85.6vh;
@@ -34,7 +33,7 @@ export const SubHeading = styled.div`
   color: #57606b;
 `;
 export const ButtonMainDiv = styled.div``;
-export const AddCategoryMainDiv = styled.div`
+export const AddMainDiv = styled.div`
   margin-top: 1rem;
   padding: 1rem;
   background-color: #ffffff;
@@ -42,26 +41,20 @@ export const AddCategoryMainDiv = styled.div`
   flex-direction: column;
   justify-content: space-between;
 `;
-export const AddCategoryHeading = styled.div`
+export const AddHeading = styled.div`
   font-size: 0.85rem;
   margin-bottom: 1rem;
 `;
-
-export const CategoryTableMainDiv = styled.div`
+export const MainDiv = styled.div`
   // background-color: red;
   margin-top: 1rem;
 
   // display: flex;
   // justify-content: space-between;
 `;
-export const CategoryTableDiv = styled.div`
+export const TableDiv = styled.div`
   background-color: #ffffff;
   // width: 100%;
   padding: 2rem;
 `;
-export const SubCategoryTableDiv = styled.div`
-  background-color: #ffffff;
-  // width: 100%;
-  padding: 2rem;
-  margin-top: 1rem;
-`;
+//up to

@@ -1,18 +1,14 @@
 import React from "react";
-import * as c from "./Category.styles";
-import CategoryDataTable from "./CategoryDataTable";
+import * as c from "./SubCategory.styles";
 import SubCategoryDataTable from "./SubCategoryDataTable";
 
 const CategoryTable = () => {
   return (
     <>
       <c.CategoryTableMainDiv>
-        <c.CategoryTableDiv>
-          <CategoryDataTable />
-        </c.CategoryTableDiv>
-        {/* <c.SubCategoryTableDiv>
+        <c.SubCategoryTableDiv>
           <SubCategoryDataTable />
-        </c.SubCategoryTableDiv> */}
+        </c.SubCategoryTableDiv>
       </c.CategoryTableMainDiv>
     </>
   );

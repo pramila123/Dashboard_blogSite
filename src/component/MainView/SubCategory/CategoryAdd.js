@@ -1,12 +1,12 @@
 import React from "react";
-import * as c from "./Category.styles";
+import * as c from "./";
 import Button from "@material-ui/core/Button";
 import TextField from "@mui/material/TextField";
 const CategoryAdd = () => {
   return (
     <>
-      <c.AddCategoryMainDiv>
-        <c.AddCategoryHeading>Add Category</c.AddCategoryHeading>
+      <c.AddMainDiv>
+        <c.AddHeading>Add Category</c.AddHeading>
         <TextField
           id="outlined-basic"
           label="Category"
@@ -24,7 +24,7 @@ const CategoryAdd = () => {
         >
           Add
         </Button>
-      </c.AddCategoryMainDiv>
+      </c.AddMainDiv>
     </>
   );
 };

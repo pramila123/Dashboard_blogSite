@@ -1,11 +1,16 @@
-import React from 'react'
-
+import React from "react";
+import * as c from "./SubCategory.styles";
+import Heading from "./Heading";
+import CategoryTable from "./CategoryTable";
 const SubCategory = () => {
-    return (
-        <div>
-            Sub category
-        </div>
-    )
-}
+  return (
+    <c.Root>
+      <c.Container>
+        <Heading />
+        <CategoryTable />
+      </c.Container>
+    </c.Root>
+  );
+};
 
-export default SubCategory
+export default SubCategory;

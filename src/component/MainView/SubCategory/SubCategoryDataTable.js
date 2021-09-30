@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
@@ -12,10 +12,9 @@ import "jquery/dist/jquery.min.js";
 import "datatables.net-dt/js/dataTables.dataTables";
 import "datatables.net-dt/css/jquery.dataTables.min.css";
 import $ from "jquery";
-
-import DeleteIcon from "../../DeleteComponent/DeleteIcon";
-import EditIcon from "../../EditComponent/EditIcon";
 import ViewIcon from "../../ViewComponent/ViewIcon";
+import EditIcon from "../../EditComponent/EditIcon";
+import DeleteIcon from "../../DeleteComponent/DeleteIcon";
 
 function createData(name, calories, fat, carbs, protein) {
   return { name, calories, fat, carbs, protein };
@@ -41,18 +40,18 @@ const useStyle = makeStyles((theme) => ({
   },
 }));
 
-export default function CategoryDataTable() {
+export default function SubCategoryDataTable() {
   const classes = useStyle();
   useEffect(() => {
     $(document).ready(function () {
-      $("#example").DataTable();
+      $("#example2").DataTable();
     });
   });
 
   return (
     <TableContainer>
       <Table
-        id="example"
+        id="example2"
         sx={{ minWidth: 300 }}
         style={{ paddingTop: "1rem", paddingBottom: "rem" }}
       >
@@ -79,6 +78,8 @@ export default function CategoryDataTable() {
                   ? { backgroundColor: "#e0e0d1" }
                   : { backgroundColor: "white" }
               }
+              //   className={index % 2 ? classes.stripColor : classes.stripNoColor}
+              //   sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
             >
               <TableCell align="left" className={classes.tableRow}>
                 {index}

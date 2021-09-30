@@ -1,9 +1,15 @@
-import React from 'react'
-
+import React from "react";
+import * as p from "./Products.styles";
+import Heading from "./Heading";
+import Body from "./Body";
 export default function Products() {
-    return (
-        <h1>
-            Products
-        </h1>
-    )
+  return (
+    <p.Root>
+      <p.Container>
+        <Heading />
+
+        <Body />
+      </p.Container>
+    </p.Root>
+  );
 }
