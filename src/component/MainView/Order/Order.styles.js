@@ -35,7 +35,7 @@ export const SubHeading = styled.div`
 export const ButtonMainDiv = styled.div``;
 export const AddMainDiv = styled.div`
   margin-top: 1rem;
-  padding: 1rem;
+  padding: 1rem 1rem 1rem 1.5rem;
   background-color: #ffffff;
   display: flex;
   flex-direction: column;
@@ -43,7 +43,7 @@ export const AddMainDiv = styled.div`
 `;
 export const AddHeading = styled.div`
   font-size: 0.85rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 `;
 export const MainDiv = styled.div`
   // background-color: red;

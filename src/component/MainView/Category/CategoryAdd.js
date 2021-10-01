@@ -14,7 +14,7 @@ const CategoryAdd = () => {
           size="small"
           inputProps={{ style: { fontSize: 15 } }}
           InputLabelProps={{ style: { fontSize: 15 } }}
-          style={{ width: "20rem", marginBottom: "1rem" }}
+          style={{ width: "20rem", marginBottom: "0.8rem" }}
         />
 
         <Button

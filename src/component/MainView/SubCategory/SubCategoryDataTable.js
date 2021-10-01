@@ -93,7 +93,6 @@ export default function SubCategoryDataTable() {
                 <ViewIcon />
                 <EditIcon />
                 <DeleteIcon />
-                <SuccessAlert />
               </TableCell>
             </TableRow>
           ))}

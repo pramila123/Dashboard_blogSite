@@ -9,6 +9,7 @@ import Alert from "@mui/material/Alert";
 import Button from "@mui/material/Button";
 import Stack from "@mui/material/Stack";
 import Dialog from "@material-ui/core/Dialog";
+import Snackbar from "@material-ui/core/Snackbar";
 
 const useStyles = makeStyles((theme) => ({
   alert: {
@@ -28,6 +29,9 @@ const useStyle = makeStyles((theme) => ({
       borderRadius: "50%",
       color: "white",
     },
+  },
+  alert: {
+    backgroundColor: "red",
   },
 }));
 const DeleteIcon = (props) => {
@@ -50,27 +54,23 @@ const DeleteIcon = (props) => {
           onClick={handleClickOpen}
         />
       </Tooltip>
-      <Dialog
+
+      <Snackbar
         open={opendialog}
+        // autoHideDuration={1500}
         onClose={handleCloseDialog}
-        aria-labelledby="alert-dialog-title"
-        aria-describedby="alert-dialog-description"
       >
-        <Stack sx={{ width: "100%" }} spacing={2} autoHideDuration={6000}>
-          <Alert className={classes.alert} onClose={() => {}}>
-            This is a success alert — check it out!
-          </Alert>
-          {/* <Alert
-          action={
-            <Button color="inherit" size="small">
-              UNDO
-            </Button>
-          }
+        <Alert
+          onClose={handleCloseDialog}
+          style={{
+            color: "#fff",
+            backgroundColor: "#333A56",
+            borderLeft: "1px green",
+          }}
         >
-          This is a success alert — check it out!
-        </Alert> */}
-        </Stack>
-      </Dialog>
+          Deleted Successfully !
+        </Alert>
+      </Snackbar>
     </>
   );
 };

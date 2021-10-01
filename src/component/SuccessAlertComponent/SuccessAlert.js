@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Alert from "@mui/material/Alert";
-import Button from "@mui/material/Button";
 import Stack from "@mui/material/Stack";
 import { makeStyles } from "@material-ui/core/styles";
 import Dialog from "@material-ui/core/Dialog";
@@ -17,9 +16,9 @@ const SuccessAlert = () => {
 
   //for alert dialog box after submitting.
   const [opendialog, setOpenDialog] = useState(false);
-  const handleClickOpen = () => {
-    setOpenDialog(true);
-  };
+  // const handleClickOpen = () => {
+  //   setOpenDialog(true);
+  // };
   const handleCloseDialog = () => {
     setOpenDialog(false);
   };
