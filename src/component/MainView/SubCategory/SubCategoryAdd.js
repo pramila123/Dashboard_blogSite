@@ -57,7 +57,7 @@ const CategoryAdd = () => {
               labelId="demo-customized-select-label"
               id="demo-customized-select"
               input={<BootstrapInput />}
-              style={{ marginBottom: "1rem", width: "20rem" }}
+              style={{ marginBottom: "0.8rem", width: "20rem" }}
             >
               <MenuItem value="">
                 <em>Category</em>

@@ -36,7 +36,7 @@ export const SubHeading = styled.div`
 export const ButtonMainDiv = styled.div``;
 export const AddCategoryMainDiv = styled.div`
   margin-top: 1rem;
-  padding: 1rem;
+  padding: 1rem 1rem 1rem 1.5rem;
   background-color: #ffffff;
   display: flex;
   flex-direction: column;
@@ -44,7 +44,7 @@ export const AddCategoryMainDiv = styled.div`
 `;
 export const AddCategoryHeading = styled.div`
   font-size: 0.85rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 `;
 
 export const CategoryTableMainDiv = styled.div`

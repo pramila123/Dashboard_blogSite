@@ -1,12 +1,12 @@
 import React from "react";
-import * as c from "./Category.styles";
+import * as o from "./Order.styles";
 import Button from "@material-ui/core/Button";
 import TextField from "@mui/material/TextField";
-const CategoryAdd = () => {
+const AddFiled = () => {
   return (
     <>
-      <c.AddCategoryMainDiv>
-        <c.AddCategoryHeading>Add Category</c.AddCategoryHeading>
+      <o.AddMainDiv>
+        <o.AddHeading>Add Product</o.AddHeading>
         <TextField
           id="outlined-basic"
           label="Category"
@@ -24,9 +24,9 @@ const CategoryAdd = () => {
         >
           Add
         </Button>
-      </c.AddCategoryMainDiv>
+      </o.AddMainDiv>
     </>
   );
 };
 
-export default CategoryAdd;
+export default AddFiled;

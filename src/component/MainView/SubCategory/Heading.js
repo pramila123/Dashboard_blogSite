@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import * as c from "./SubCategory.styles";
 import Button from "@material-ui/core/Button";
 import SubCategoryAdd from "./SubCategoryAdd";
+import AddButton from "../../ButtonComponent/AddButton";
 
 const CategoryHeding = () => {
   const [show, setShow] = useState(false);
@@ -19,14 +20,15 @@ const CategoryHeding = () => {
           {/* <Button variant="outlined" color="primary">
             Add Category
           </Button> */}
-          <Button
+          {/* <Button
             variant="outlined"
             color="primary"
             style={{ marginLeft: "1rem" }}
             onClick={showAddField}
           >
             Add Sub Category
-          </Button>
+          </Button> */}
+          <AddButton showAddField={showAddField} name="Add Sub Category" />
         </c.ButtonMainDiv>
       </c.HadingButtonMainDiv>
       {show ? <SubCategoryAdd /> : " "}

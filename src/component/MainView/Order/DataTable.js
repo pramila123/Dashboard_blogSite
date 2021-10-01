@@ -15,7 +15,6 @@ import $ from "jquery";
 import ViewIcon from "../../ViewComponent/ViewIcon";
 import EditIcon from "../../EditComponent/EditIcon";
 import DeleteIcon from "../../DeleteComponent/DeleteIcon";
-import SuccessAlert from "../../SuccessAlertComponent/SuccessAlert";
 
 function createData(name, calories, fat, carbs, protein) {
   return { name, calories, fat, carbs, protein };
@@ -25,6 +24,16 @@ const rows = [
   createData("Frozen yoghurt", 159, 6.0, 24, 4.0),
   createData("Ice cream sandwich", 237, 9.0, 37, 4.3),
   createData("Eclair", 262, 16.0, 24, 6.0),
+  createData("Cupcake", 305, 3.7, 67, 4.3),
+  createData("Gingerbread", 356, 16.0, 49, 3.9),
+  createData("Cupcake", 305, 3.7, 67, 4.3),
+  createData("Gingerbread", 356, 16.0, 49, 3.9),
+  createData("Cupcake", 305, 3.7, 67, 4.3),
+  createData("Gingerbread", 356, 16.0, 49, 3.9),
+  createData("Cupcake", 305, 3.7, 67, 4.3),
+  createData("Gingerbread", 356, 16.0, 49, 3.9),
+  createData("Cupcake", 305, 3.7, 67, 4.3),
+  createData("Gingerbread", 356, 16.0, 49, 3.9),
   createData("Cupcake", 305, 3.7, 67, 4.3),
   createData("Gingerbread", 356, 16.0, 49, 3.9),
 ];
@@ -41,18 +50,18 @@ const useStyle = makeStyles((theme) => ({
   },
 }));
 
-export default function SubCategoryDataTable() {
+export default function DataTable() {
   const classes = useStyle();
   useEffect(() => {
     $(document).ready(function () {
-      $("#example2").DataTable();
+      $("#example4").DataTable();
     });
   });
 
   return (
     <TableContainer>
       <Table
-        id="example2"
+        id="example4"
         sx={{ minWidth: 300 }}
         style={{ paddingTop: "1rem", paddingBottom: "rem" }}
       >
@@ -83,7 +92,7 @@ export default function SubCategoryDataTable() {
               //   sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
             >
               <TableCell align="left" className={classes.tableRow}>
-                {index + 1}
+                {index}
               </TableCell>
               <TableCell align="left" className={classes.tableRow}>
                 {row.name}
