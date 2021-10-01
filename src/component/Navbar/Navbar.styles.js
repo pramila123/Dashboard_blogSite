@@ -24,7 +24,8 @@ export const MenuItem = styled.ul`
   p {
     text-align: center;
 
-    font-size: 1.1rem;
+    font-size: 0.99rem;
+    font-weight:normal;
     color: #333a56;
     text-transform: uppercase;
   }
