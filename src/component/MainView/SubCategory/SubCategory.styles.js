@@ -2,10 +2,11 @@ import styled from "styled-components";
 
 export const Root = styled.div`
   padding-right: 2px;
+  margin-top: 7px;
   background-color: #efefef;
 `;
 export const Container = styled.div`
-  height: 85.6vh;
+  height: 85vh;
   overflow: scroll;
 
   overflow-x: hidden;

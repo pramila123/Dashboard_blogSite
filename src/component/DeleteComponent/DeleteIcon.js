@@ -14,11 +14,14 @@ import DialogTitle from "@mui/material/DialogTitle";
 import Slide from "@mui/material/Slide";
 import Button from "@mui/material/Button";
 import styled from "styled-components";
-
+import { flexbox } from "@mui/system";
+import AddButton from "../ButtonComponent/AddButton";
+import { Container } from "@material-ui/core";
+import image from "../../Assets/info.png";
 const StyledDialog = styled(Dialog)`
   .MuiBackdrop-root {
-    background-color: transparent;
-    backdrop-filter: blur(1px);
+    // background-color: transparent;
+    backdrop-filter: blur(0px);
   }
 `;
 
@@ -34,6 +37,8 @@ const useStyle = makeStyles((theme) => ({
     fontSize: "1.2rem",
     marginLeft: "0.8rem",
     color: "#EF3B4F",
+    // boxshadow: "5px 5px 30px rgba(0, 0, 0, 0.25)",
+
     "&:hover": {
       backgroundColor: "#84818A",
       // padding: "0.1rem",
@@ -43,6 +48,64 @@ const useStyle = makeStyles((theme) => ({
   },
   alert: {
     backgroundColor: "red",
+  },
+  title: {
+    fontSize: "1rem",
+    marginTop: "1rem",
+    color: "#333a56",
+  },
+  subtitle: {
+    color: "#556191",
+    fontSize: "0.8rem",
+    marginTop: "0.5rem",
+
+    align: "center",
+  },
+  buttonContainer: {
+    display: "flex",
+    justifyContent: "center",
+    marginTop: "1.2rem",
+  },
+  button: {
+    color: "#eff0f6",
+    backgroundColor: "#4b5681",
+    borderRadius: "6px",
+    border: "1px solid #D3CFD9 ",
+    fontFamily: "'IBM Plex Sans', sans-serif",
+    fontWeight: 600,
+
+    fontSize: ".7rem",
+    textTransform: "capitalize",
+    webkitTransition: ".25s cubic-bezier(.17,.67,.83,.67)",
+    transition: ".25s cubic-bezier(.17,.67,.83,.67)",
+    letterSpacing: ".8px",
+    display: "flex",
+    textAlign: "center",
+    whiteSpace: "nowrap",
+    verticalAlign: "middle",
+
+    padding: ".375rem 1.7rem",
+    lineHeight: "1.5",
+    "&:hover": {
+      backgroundColor: "transparent",
+
+      color: "#57606B",
+    },
+  },
+  cancleButton: {
+    backgroundColor: "#d6d6c2",
+    color: "#57606B",
+    marginLeft: "1rem",
+  },
+  imgInfoDiv: {
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  img: {
+    width: "10rem",
+    // marginTop: "1rem",
   },
 }));
 
@@ -92,14 +155,35 @@ const DeleteIcon = (props) => {
         onClose={handleCloseConfimationDialog}
         aria-describedby="alert-dialog-slide-description"
       >
-        <DialogTitle>{"Are you sure you want to delete?"}</DialogTitle>
-        <DialogContent>
-          <DialogContentText id="alert-dialog-slide-description">
-            Let Google help apps determine location. This means sending
-            anonymous location data to Google, even when no apps are running.
-          </DialogContentText>
+        <DialogContent className={classes.imgInfoDiv}>
+          <img src={image} className={classes.img} />
+          <p className={classes.title}>Are you sure you want to delete?</p>
+          <p className={classes.subtitle}>
+            You will permanently lose the data.
+          </p>
+          <Container className={classes.buttonContainer}>
+            <button
+              type="button"
+              onClick={() => {
+                handleClickOpen();
+                handleCloseConfimationDialog();
+              }}
+              className={classes.button}
+            >
+              Confirm
+            </button>
+            <button
+              type="button"
+              onClick={() => {
+                handleCloseConfimationDialog();
+              }}
+              className={classes.button + " " + classes.cancleButton}
+            >
+              Cancel
+            </button>
+          </Container>
         </DialogContent>
-        <DialogActions>
+        {/* <DialogActions className={classes.ButtonDiv}>
           <Button onClick={handleCloseConfimationDialog}>Disagree</Button>
           <Button
             onClick={() => {
@@ -109,7 +193,7 @@ const DeleteIcon = (props) => {
           >
             Agree
           </Button>
-        </DialogActions>
+        </DialogActions> */}
       </StyledDialog>
 
       {/* Snack bar */}
