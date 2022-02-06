@@ -7,17 +7,20 @@ import AboutUs from "./component/MainView/AboutUs/AboutUs";
 import Contacts from "./component/MainView/Contacts/Contacts";
 import SubCategory from "./component/MainView/SubCategory/SubCategory";
 import Order from "./component/MainView/Order/Order";
+import Navbar from "./component/Navbar/Navbar";
 
 export const Routes = () => {
   return (
     <Switch>
-      <Route exact path="/" component={Dashboard} />
-      <Route path="/category" component={Category} />
-      <Route path="/products" component={Products} />
-      <Route path="/aboutus" component={AboutUs} />
-      <Route path="/contacts" component={Contacts} />
-      <Route path="/subcategory" component={SubCategory} />
-      <Route path="/order" component={Order} />
+      {/* <Navbar /> */}
+      <Route exact path="/admin" component={Dashboard} />
+      {/* <Route path="/Navbar" component={Navbar} /> */}
+      <Route path="/admin/category" component={Category} />
+      <Route path="/admin/products" component={Products} />
+      <Route path="/admin/aboutus" component={AboutUs} />
+      <Route path="/admin/contacts" component={Contacts} />
+      <Route path="/admin/subcategory" component={SubCategory} />
+      <Route path="/admin/order" component={Order} />
     </Switch>
   );
 };

@@ -19,10 +19,11 @@ const CategoryHeding = () => {
           {/* <Button variant="outlined" color="primary" >
             Add Category
           </Button> */}
-          <AddButton showAddField={showAddField} name="Add Catgory" />
+          {/* <AddButton showAddField={showAddField} name="Add Catgory" /> */}
         </c.ButtonMainDiv>
       </c.HadingButtonMainDiv>
-      {show ? <CategoryAdd /> : " "}
+      {/* {show ? <CategoryAdd /> : " "} */}
+      <CategoryAdd />
     </>
   );
 };

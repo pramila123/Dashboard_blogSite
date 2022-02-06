@@ -2,6 +2,8 @@ import React from "react";
 import * as c from "./";
 import Button from "@material-ui/core/Button";
 import TextField from "@mui/material/TextField";
+import { IoAddCircleOutline } from "react-icons/io5";
+
 const CategoryAdd = () => {
   return (
     <>
@@ -19,9 +21,10 @@ const CategoryAdd = () => {
 
         <Button
           variant="outlined"
-          color="primary"
+          className="categoryAddBtton"
           style={{ width: "5rem", fontSize: "0.7rem" }}
         >
+          <IoAddCircleOutline className="addIcon" />
           Add
         </Button>
       </c.AddMainDiv>

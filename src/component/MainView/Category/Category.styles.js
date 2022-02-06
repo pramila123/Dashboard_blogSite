@@ -6,7 +6,7 @@ export const Root = styled.div`
   background-color: #efefef;
 `;
 export const Container = styled.div`
-  height: 85vh;
+  height: 83.9vh;
   overflow: scroll;
 
   overflow-x: hidden;
@@ -41,6 +41,17 @@ export const AddCategoryMainDiv = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  .categoryAddBtton {
+    color: #eff0f6;
+    display: flex;
+
+    background-color: #4b5681;
+    text-transform: none;
+  }
+  .addIcon {
+    font-size: 1rem;
+    margin-right: 0.2rem;
+  }
 `;
 export const AddCategoryHeading = styled.div`
   font-size: 0.85rem;

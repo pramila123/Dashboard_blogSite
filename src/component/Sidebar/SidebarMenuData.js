@@ -7,11 +7,11 @@ import { FaNetworkWired } from "react-icons/fa";
 import { AiFillEdit } from "react-icons/ai";
 
 export const menuItems = [
-  { name: "Dashboard", to: "/", icon: <FaHome /> },
-  { name: "Category", to: "/category", icon: <IoGitNetworkSharp /> },
-  { name: "Sub Category", to: "/subcategory", icon: <FaNetworkWired /> },
-  { name: "Products", to: "/products", icon: <BsFillBriefcaseFill /> },
-  { name: "Order", to: "/order", icon: <AiFillEdit /> },
-  { name: "About Us", to: "/aboutus", icon: <IoIosPeople /> },
-  { name: "Contacts", to: "/contacts", icon: <MdContactPhone /> },
+  { name: "Dashboard", to: "/admin/", icon: <FaHome /> },
+  { name: "Category", to: "/admin/category", icon: <IoGitNetworkSharp /> },
+  { name: "Sub Category", to: "/admin/subcategory", icon: <FaNetworkWired /> },
+  { name: "Products", to: "/admin/products", icon: <BsFillBriefcaseFill /> },
+  { name: "Order", to: "/admin/order", icon: <AiFillEdit /> },
+  { name: "About Us", to: "/admin/aboutus", icon: <IoIosPeople /> },
+  { name: "Contacts", to: "/admin/contacts", icon: <MdContactPhone /> },
 ];

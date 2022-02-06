@@ -1,15 +1,12 @@
-import React from 'react';
-import * as s from './MainView.styles';
-import Routes from '../../Routes'
-
+import React from "react";
+import * as s from "./MainView.styles";
+import Routes from "../../Routes";
 const MainView = () => {
   return (
-    
     <s.MainViewContainer>
-      <Routes/>
+      <Routes />
     </s.MainViewContainer>
-    
-  )
-}
+  );
+};
 
-export default MainView
+export default MainView;

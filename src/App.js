@@ -3,20 +3,30 @@ import GlobalStyles from "./GlobalStyles";
 import styled from "styled-components";
 import Navbar from "./component/Navbar/Navbar";
 import React, { useEffect } from "react";
-
+import MainNavbar from "./Blog/pages/Navbar/Navbar";
+import SelectField from "./SelectField";
 const Appstyle = styled.div``;
+
+const MainPageContainor = styled.div``;
 
 function App() {
   // useEffect(() => {
   //   document.title = "Ecommerce";
   // });
   return (
-    <Appstyle>
-      <GlobalStyles />
-      <Navbar />
+    <>
+      {/* <MainPageContainor>
+        <MainNavbar />
+      </MainPageContainor> */}
+      <Appstyle>
+        <GlobalStyles />
 
-      <MainView />
-    </Appstyle>
+        <Navbar />
+
+        <MainView />
+        {/* <SelectField /> */}
+      </Appstyle>
+    </>
   );
 }
 

@@ -6,7 +6,7 @@ export const Root = styled.div`
   background-color: #efefef;
 `;
 export const Container = styled.div`
-  height: 85vh;
+  height: 84vh;
   overflow: scroll;
 
   overflow-x: hidden;

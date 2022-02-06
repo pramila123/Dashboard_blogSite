@@ -1,9 +1,8 @@
 import styled from "styled-components";
 
 export const SidebarContainer = styled.div`
- 
-  width:18%;
-  left:${({click})=>(click? "-18% ":"0%")};
+  width: 18%;
+  left: ${({ click }) => (click ? "-18% " : "0%")};
   height: 100vh;
   position: absolute; // Toggler
   transition: 0.2s ease-in all;
@@ -12,11 +11,25 @@ export const SidebarContainer = styled.div`
 `;
 
 export const SidebarHeader = styled.h3`
-  padding: 20px 0;
+  // background: red;
+  padding: 0.6rem 1rem 0.6rem 1rem;
   text-align: center;
   margin-bottom: 10px;
-  letter-spacing: 3px;
-  text-transform: uppercase;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.2rem;
+
+  .avater {
+    background: linear-gradient(105.6deg, #7db6e7 37.65%, #1ad697 83.5%);
+    padding: 0rem;
+    margin-right: 0.5rem;
+  }
+  .pencil-log {
+    font-size: 1rem;
+  }
 `;
 
 export const MenuItemContainer = styled.div``;
@@ -42,5 +55,4 @@ export const Icon = styled.span`
   height: 18px;
   color: white;
   padding-right: 15px;
- 
 `;
