@@ -1,8 +1,8 @@
 import React from "react";
-import * as o from "./Order.styles";
+import * as o from "./Employee.styles";
 import Heading from "./Heading";
 import Body from "./Body";
-const Order = () => {
+const Employee = () => {
   return (
     <o.Root>
       <o.Container>
@@ -14,4 +14,4 @@ const Order = () => {
   );
 };
 
-export default Order;
+export default Employee;

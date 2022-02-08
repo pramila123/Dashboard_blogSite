@@ -33,18 +33,53 @@ export const SubHeading = styled.div`
   padding-top: 0.4rem;
   color: #57606b;
 `;
-export const ButtonMainDiv = styled.div``;
+export const ButtonMainDiv = styled.div`
+  .categoryAddBtton {
+    color: #eff0f6;
+    display: flex;
+
+    background-color: #4b5681;
+    text-transform: none;
+
+    align-items: center;
+    &:hover {
+      background-color: transparent;
+      color: #57606b;
+    }
+  }
+  .addIcon {
+    font-size: 1rem;
+    margin-right: 0.2rem;
+    margin-bottom: 0.1rem;
+  }
+`;
 export const AddMainDiv = styled.div`
   margin-top: 1rem;
-  padding: 1rem 1rem 1rem 1.5rem;
+  padding: 1rem 1.5rem 1rem 1.5rem;
   background-color: #ffffff;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  .categoryAddBtton {
+    color: #eff0f6;
+    display: flex;
+
+    background-color: #4b5681;
+    text-transform: none;
+  }
+  .addIcon {
+    font-size: 1rem;
+    margin-right: 0.2rem;
+  }
+`;
+export const Title = styled.div`
+  font-size: 0.9rem;
+  color: #444;
+  margin-bottom: 0.5rem;
 `;
 export const AddHeading = styled.div`
   font-size: 0.85rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
 `;
 export const MainDiv = styled.div`
   // background-color: red;

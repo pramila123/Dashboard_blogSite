@@ -13,8 +13,8 @@ export const TopContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   // height: 60px;
-  padding-top: 0.4rem;
-  padding-bottom: 0.4rem;
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
   padding-right: 2rem;
   padding-left: 2rem;
   cursor: pointer;

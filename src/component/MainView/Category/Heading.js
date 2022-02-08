@@ -15,12 +15,7 @@ const CategoryHeding = () => {
           <c.Heading>Category</c.Heading>
           <c.SubHeading>View Category Detail</c.SubHeading>
         </c.HeadingMianDiv>
-        <c.ButtonMainDiv>
-          {/* <Button variant="outlined" color="primary" >
-            Add Category
-          </Button> */}
-          {/* <AddButton showAddField={showAddField} name="Add Catgory" /> */}
-        </c.ButtonMainDiv>
+        <c.ButtonMainDiv></c.ButtonMainDiv>
       </c.HadingButtonMainDiv>
       {/* {show ? <CategoryAdd /> : " "} */}
       <CategoryAdd />

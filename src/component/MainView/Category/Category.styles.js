@@ -55,7 +55,7 @@ export const AddCategoryMainDiv = styled.div`
 `;
 export const AddCategoryHeading = styled.div`
   font-size: 0.85rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
 `;
 
 export const CategoryTableMainDiv = styled.div`

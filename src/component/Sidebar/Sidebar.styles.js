@@ -6,13 +6,26 @@ export const SidebarContainer = styled.div`
   height: 100vh;
   position: absolute; // Toggler
   transition: 0.2s ease-in all;
-  background: #333a56;
+  background: #506795;
   color: #ffffff;
+`;
+export const SidebarTitle = styled.div`
+  // background-color: #fff;
+  color: #d6d6c2;
+  border-radius: 3px;
+  font-size: 0.9rem;
+  margin: 1rem 1rem 0rem 1rem;
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+  // width: 100%;
 `;
 
 export const SidebarHeader = styled.h3`
   // background: red;
   padding: 0.6rem 1rem 0.6rem 1rem;
+  border-bottom: 1px solid #d6d6c2;
   text-align: center;
   margin-bottom: 10px;
 
@@ -38,12 +51,12 @@ export const MenuItem = styled.div`
   font-weight: 500;
   font-size: 0.85rem;
   font-family: Dosis, sans-serif;
-  background: ${(props) => (props.isItemSelected ? "#262b40" : "#333a56")};
+  background: ${(props) => (props.isItemSelected ? "#3e5074" : "#506795")};
   border-left: ${(props) => (props.isItemSelected ? "4px solid red" : "")};
 
   &:hover {
     color: gray;
-    background: #262b40;
+    background: #3e5074;
     cursor: pointer;
     transition: 0.1s ease-in all;
     border-left: 4px solid red;

@@ -35,6 +35,7 @@ const Sidebar = ({ isItemSelected, click }) => {
           </Avatar>
           Integra
         </s.SidebarHeader>
+        <s.SidebarTitle className="menuTitle">Menu</s.SidebarTitle>
         <s.MenuItemContainer>{menuItemsJSX}</s.MenuItemContainer>
       </s.SidebarContainer>
     </div>

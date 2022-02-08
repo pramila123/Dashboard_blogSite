@@ -1,5 +1,5 @@
 import React from "react";
-import * as o from "./Order.styles";
+import * as o from "./Employee.styles";
 import DataTable from "./DataTable";
 
 const Body = () => {

@@ -11,7 +11,7 @@ export const menuItems = [
   { name: "Category", to: "/admin/category", icon: <IoGitNetworkSharp /> },
   { name: "Sub Category", to: "/admin/subcategory", icon: <FaNetworkWired /> },
   { name: "Products", to: "/admin/products", icon: <BsFillBriefcaseFill /> },
-  { name: "Order", to: "/admin/order", icon: <AiFillEdit /> },
+  { name: "Employee", to: "/admin/employee", icon: <AiFillEdit /> },
   { name: "About Us", to: "/admin/aboutus", icon: <IoIosPeople /> },
   { name: "Contacts", to: "/admin/contacts", icon: <MdContactPhone /> },
 ];

@@ -6,8 +6,8 @@ import Products from "./component/MainView/Products/Products";
 import AboutUs from "./component/MainView/AboutUs/AboutUs";
 import Contacts from "./component/MainView/Contacts/Contacts";
 import SubCategory from "./component/MainView/SubCategory/SubCategory";
-import Order from "./component/MainView/Order/Order";
 import Navbar from "./component/Navbar/Navbar";
+import Employee from "./component/MainView/Employee/Employee";
 
 export const Routes = () => {
   return (
@@ -20,7 +20,7 @@ export const Routes = () => {
       <Route path="/admin/aboutus" component={AboutUs} />
       <Route path="/admin/contacts" component={Contacts} />
       <Route path="/admin/subcategory" component={SubCategory} />
-      <Route path="/admin/order" component={Order} />
+      <Route path="/admin/employee" component={Employee} />
     </Switch>
   );
 };
