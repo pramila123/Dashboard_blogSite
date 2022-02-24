@@ -8,12 +8,13 @@ import Contacts from "./component/MainView/Contacts/Contacts";
 import SubCategory from "./component/MainView/SubCategory/SubCategory";
 import Navbar from "./component/Navbar/Navbar";
 import Employee from "./component/MainView/Employee/Employee";
-
+import LoginPage from "./component/MainView/LoginPage/LoginPage";
 export const Routes = () => {
   return (
     <Switch>
+      {/* <Route path="/login" component={LoginPage} /> */}
       {/* <Navbar /> */}
-      <Route exact path="/admin" component={Dashboard} />
+      <Route exact path="/" component={Dashboard} />
       {/* <Route path="/Navbar" component={Navbar} /> */}
       <Route path="/admin/category" component={Category} />
       <Route path="/admin/products" component={Products} />

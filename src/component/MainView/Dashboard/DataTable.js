@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
@@ -12,12 +12,9 @@ import "jquery/dist/jquery.min.js";
 import "datatables.net-dt/js/dataTables.dataTables";
 import "datatables.net-dt/css/jquery.dataTables.min.css";
 import $ from "jquery";
-
-import DeleteIcon from "../../DeleteComponent/DeleteIcon";
-import EditIcon from "../../EditComponent/EditIcon";
 import ViewIcon from "../../ViewComponent/ViewIcon";
-import axios from "axios";
-import { CategoryContext } from "../../../Store/Context/CategoryContext";
+import EditIcon from "../../EditComponent/EditIcon";
+import DeleteIcon from "../../DeleteComponent/DeleteIcon";
 
 function createData(name, calories, fat, carbs, protein) {
   return { name, calories, fat, carbs, protein };
@@ -27,6 +24,16 @@ const rows = [
   createData("Frozen yoghurt", 159, 6.0, 24, 4.0),
   createData("Ice cream sandwich", 237, 9.0, 37, 4.3),
   createData("Eclair", 262, 16.0, 24, 6.0),
+  createData("Cupcake", 305, 3.7, 67, 4.3),
+  createData("Gingerbread", 356, 16.0, 49, 3.9),
+  createData("Cupcake", 305, 3.7, 67, 4.3),
+  createData("Gingerbread", 356, 16.0, 49, 3.9),
+  createData("Cupcake", 305, 3.7, 67, 4.3),
+  createData("Gingerbread", 356, 16.0, 49, 3.9),
+  createData("Cupcake", 305, 3.7, 67, 4.3),
+  createData("Gingerbread", 356, 16.0, 49, 3.9),
+  createData("Cupcake", 305, 3.7, 67, 4.3),
+  createData("Gingerbread", 356, 16.0, 49, 3.9),
   createData("Cupcake", 305, 3.7, 67, 4.3),
   createData("Gingerbread", 356, 16.0, 49, 3.9),
 ];
@@ -43,23 +50,18 @@ const useStyle = makeStyles((theme) => ({
   },
 }));
 
-export default function CategoryDataTable() {
+export default function DataTable() {
   const classes = useStyle();
-  const { category, dispatch, getCategoryFormDb } = useContext(CategoryContext);
-
-  useEffect(() => {
-    getCategoryFormDb();
-  }, []);
-
   useEffect(() => {
     $(document).ready(function () {
-      $("#example").DataTable();
+      $("#example3").DataTable();
     });
   });
+
   return (
     <TableContainer>
       <Table
-        id="example"
+        id="example3"
         sx={{ minWidth: 300 }}
         style={{ paddingTop: "1rem", paddingBottom: "rem" }}
       >
@@ -78,20 +80,22 @@ export default function CategoryDataTable() {
           </TableRow>
         </TableHead>
         <TableBody stripedRows>
-          {category.data.map((row, index) => (
+          {rows.map((row, index) => (
             <TableRow
-              key={index}
+              key={row.name}
               style={
                 index % 2
                   ? { backgroundColor: "#e0e0d1" }
                   : { backgroundColor: "white" }
               }
+              //   className={index % 2 ? classes.stripColor : classes.stripNoColor}
+              //   sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
             >
               <TableCell align="left" className={classes.tableRow}>
-                {index + 1}
+                {index}
               </TableCell>
               <TableCell align="left" className={classes.tableRow}>
-                {row.categoryName}
+                {row.name}
               </TableCell>
 
               <TableCell align="right">

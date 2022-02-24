@@ -5,27 +5,35 @@ import Navbar from "./component/Navbar/Navbar";
 import React, { useEffect } from "react";
 import MainNavbar from "./Blog/pages/Navbar/Navbar";
 import SelectField from "./SelectField";
+import LoginPage from "./component/MainView/LoginPage/LoginPage";
+import { useLocation } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
+import LoginContextProvider from "./Store/Context/LoginContext";
+import CategoryContextProvider from "./Store/Context/CategoryContext";
+
 const Appstyle = styled.div``;
 
 const MainPageContainor = styled.div``;
 
 function App() {
-  // useEffect(() => {
-  //   document.title = "Ecommerce";
-  // });
+  const location = useLocation();
+
   return (
     <>
-      {/* <MainPageContainor>
-        <MainNavbar />
-      </MainPageContainor> */}
-      <Appstyle>
-        <GlobalStyles />
+      <LoginContextProvider>
+        <CategoryContextProvider>
+          <Appstyle>
+            <GlobalStyles />
+            {location.pathname == "/login" ? " " : <Navbar />}
 
-        <Navbar />
-
-        <MainView />
-        {/* <SelectField /> */}
-      </Appstyle>
+            <MainView />
+            {/* <LoginPage /> */}
+            <Switch>
+              <Route path="/login" component={LoginPage} />
+            </Switch>
+          </Appstyle>
+        </CategoryContextProvider>
+      </LoginContextProvider>
     </>
   );
 }

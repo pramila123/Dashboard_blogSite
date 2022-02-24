@@ -1,15 +1,17 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import TopNavbar from "./TopNavbar";
 import { FaBars } from "react-icons/fa";
 import { Paper } from "@material-ui/core";
 import * as n from "./Navbar.styles";
 import Sidebar from "../Sidebar/Sidebar";
+import { LoginContext } from "../../Store/Context/LoginContext";
 
 const Navbar = () => {
   const [click, setclick] = useState(false);
   const handleClick = () => {
     setclick(!click);
   };
+  // const { login } = useContext(LoginContext);
   return (
     <>
       <Paper>

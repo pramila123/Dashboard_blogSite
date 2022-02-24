@@ -4,10 +4,18 @@ import * as n from "./Navbar.styles";
 import { data } from "./NavbarMenuData";
 
 const TopNavbar = () => {
+  const logout = () => {
+    localStorage.removeItem("token");
+  };
   const navitem = data.map((navbaritem, index) => {
     return (
       <>
-        <n.ItemLinks color={navbaritem.color} to={navbaritem.link} key={index}>
+        <n.ItemLinks
+          color={navbaritem.color}
+          to={navbaritem.link}
+          key={index}
+          onClick={logout}
+        >
           {navbaritem.icon}
         </n.ItemLinks>
       </>

@@ -1,11 +1,20 @@
-import React from 'react'
+import React from "react";
+import * as p from "./Products.styles";
+import Heading from "./Heading";
+import Body from "./Body";
+import { Redirect } from "react-router-dom";
+export default function Dashboard() {
+  if (!localStorage.getItem("token")) {
+    console.log("hello");
+    return <Redirect to="/login" />;
+  }
+  return (
+    <p.Root>
+      <p.Container>
+        <Heading />
 
-const Dashboard = () => {
-    return (
-        <h1>
-            Dashboard
-        </h1>
-    )
+        <Body />
+      </p.Container>
+    </p.Root>
+  );
 }
-
-export default Dashboard

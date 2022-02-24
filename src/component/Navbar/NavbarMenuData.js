@@ -3,7 +3,7 @@ import { FaUser } from "react-icons/fa";
 
 export const data = [
   {
-    link: "/logout",
+    link: "/login",
     icon: <IoLogOutOutline />,
     color: "#57606B",
   },
