@@ -14,8 +14,9 @@ const CategoryAdd = () => {
   const { category, dispatch, getCategoryFormDb } = useContext(CategoryContext);
 
   const formik = useFormik({
+    enableReinitialize: true,
     initialValues: {
-      Category: "",
+      Category: category.checkUpdate ? category.updatedData.categoryName : "",
     },
     validationSchema: Yup.object({
       Category: Yup.string()
@@ -24,33 +25,67 @@ const CategoryAdd = () => {
     }),
 
     onSubmit: (values) => {
-      // values.preventDefault();
-      // handleAdd(values.url, values.title);
-      formik.resetForm();
-      // formik.setErrors({});
-      categoryPost(values.Category);
+      if (category.checkUpdate) {
+        categoryUpdate(category.updatedData.id, values.Category);
+      } else {
+        categoryPost(values.Category);
+      }
     },
   });
 
   const categoryPost = (Category) => {
-    console.log(Category);
+    // console.log(Category);
     axios
-      .post("http://localhost:4000/category/", {
-        categoryName: Category,
-      })
-      .then((response) => {
-        setOpenDialog(true);
-        getCategoryFormDb();
+      .post(
+        "http://localhost:4000/category/",
+        {
+          categoryName: Category,
+        },
+        {
+          headers: {
+            Authorization: localStorage.getItem("token"),
+          },
+        }
+      )
+      .then((res) => {
+        if (res.data.status == "ok") {
+          formik.resetForm();
+          setOpenDialog(true);
+          getCategoryFormDb();
+        }
       })
       .catch((error) => {
         console.log(error);
-        // getSticyNotesDataDb();
-        // dispatch({
-        //   type: "SIGN_IN_FAIL",
-        //   login: {
-        //     errorMessage: error.response.data.message,
-        //   },
-        // });
+      });
+  };
+
+  const categoryUpdate = (id, categoryName) => {
+    axios
+      .patch(
+        "http://localhost:4000/category/" + id,
+        {
+          categoryName: categoryName,
+        },
+        {
+          headers: {
+            Authorization: localStorage.getItem("token"),
+          },
+        }
+      )
+      .then((res) => {
+        // console.log(res);
+        if (res.data.status == "ok") {
+          formik.resetForm();
+          setOpenDialog(true);
+          getCategoryFormDb();
+          dispatch({
+            type: "UPDATE_CATEGORY_SUCCESS",
+            category: {},
+          });
+        }
+      })
+      .catch((err) => {
+        console.log(err);
       });
   };
 
@@ -62,14 +97,13 @@ const CategoryAdd = () => {
   const handleCloseDialog = () => {
     setOpenDialog(false);
   };
-
+  {
+    // console.log(category);
+  }
   return (
     <>
       <c.AddCategoryMainDiv>
-        <c.AddCategoryHeading>
-          Add Category
-          {category.success}
-        </c.AddCategoryHeading>
+        <c.AddCategoryHeading>Add Category</c.AddCategoryHeading>
         {formik.touched.Category && formik.errors.Category ? (
           <TextField
             id="outlined-basic"
@@ -94,17 +128,29 @@ const CategoryAdd = () => {
             {...formik.getFieldProps("Category")}
           />
         )}
-
-        <Button
-          variant="outlined"
-          // color="primary"
-          className="categoryAddBtton"
-          style={{ width: "5rem", fontSize: "0.7rem" }}
-          onClick={formik.handleSubmit}
-        >
-          <IoAddCircleOutline className="addIcon" />
-          Add
-        </Button>
+        {category.checkUpdate ? (
+          <Button
+            variant="outlined"
+            // color="primary"
+            className="categoryAddBtton"
+            style={{ width: "7rem", fontSize: "0.7rem" }}
+            onClick={formik.handleSubmit}
+          >
+            <IoAddCircleOutline className="addIcon" />
+            Update
+          </Button>
+        ) : (
+          <Button
+            variant="outlined"
+            // color="primary"
+            className="categoryAddBtton"
+            style={{ width: "7rem", fontSize: "0.7rem" }}
+            onClick={formik.handleSubmit}
+          >
+            <IoAddCircleOutline className="addIcon" />
+            Add
+          </Button>
+        )}
       </c.AddCategoryMainDiv>
       <Snackbar
         open={openDialog}
@@ -112,10 +158,11 @@ const CategoryAdd = () => {
         onClose={handleCloseDialog}
         anchorOrigin={{
           vertical: "bottom",
-          horizontal: "right",
+          horizontal: "center",
         }}
       >
         <Alert
+          severity={category.success ? "success" : "error"}
           onClose={handleCloseDialog}
           style={{
             color: "#fff",
@@ -123,7 +170,7 @@ const CategoryAdd = () => {
             borderLeft: "1px green",
           }}
         >
-          Successfully !
+          Done Successfully !
         </Alert>
       </Snackbar>
     </>

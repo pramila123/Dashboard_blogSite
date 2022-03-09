@@ -4,13 +4,16 @@ import Button from "@material-ui/core/Button";
 import CategoryAdd from "./CategoryAdd";
 import AddButton from "../../ButtonComponent/AddButton";
 import { useContext } from "react";
-import { LoginContext } from "../../../Store/Context/LoginContext";
+import { CategoryContext } from "../../../Store/Context/CategoryContext";
 const CategoryHeding = () => {
-  const [show, setShow] = useState(false);
+  const { dispatch } = useContext(CategoryContext);
+
   const showAddField = () => {
-    setShow(!show);
+    dispatch({
+      type: "UPDATE_CATEGORY_SUCCESS",
+      category: {},
+    });
   };
-  const { login } = useContext(LoginContext);
 
   return (
     <>
@@ -19,7 +22,9 @@ const CategoryHeding = () => {
           <c.Heading>Category</c.Heading>
           <c.SubHeading>View Category Detail</c.SubHeading>
         </c.HeadingMianDiv>
-        <c.ButtonMainDiv></c.ButtonMainDiv>
+        <c.ButtonMainDiv>
+          <AddButton showAddField={showAddField} name="Add Category" />
+        </c.ButtonMainDiv>
       </c.HadingButtonMainDiv>
       {/* {show ? <CategoryAdd /> : " "} */}
       <CategoryAdd />

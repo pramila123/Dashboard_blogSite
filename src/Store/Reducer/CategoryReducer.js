@@ -8,12 +8,32 @@ export const CategoryReducer = (state, action) => {
         error: false,
       };
     case "GET_CATEGORY_SUCCESS":
-      console.log(action.category.data);
       return {
         ...state,
         data: action.category.data,
         success: true,
         error: false,
+      };
+    case "PASSING_UPDATE_CATEGORY_SUCCESS":
+      return {
+        ...state,
+        checkUpdate: true,
+        updatedData: action.category.data,
+        success: true,
+        error: false,
+      };
+    case "UPDATE_CATEGORY_SUCCESS":
+      return {
+        ...state,
+        checkUpdate: false,
+        success: true,
+        error: false,
+      };
+    case "DELETE_CATEGORY_SUCCESS":
+      return {
+        ...state,
+
+        success: action.category.success,
       };
 
     default:

@@ -1,7 +1,6 @@
 import React from "react";
 import Tooltip from "@material-ui/core/Tooltip";
 import Zoom from "@material-ui/core/Zoom";
-import { Link } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
 import { GiBlackBook } from "react-icons/gi";
 
@@ -23,9 +22,9 @@ const ViewIcon = () => {
   return (
     <>
       <Tooltip title="View" TransitionComponent={Zoom} arrow>
-        <Link>
+        <span>
           <GiBlackBook className={classes.viewIcon} />
-        </Link>
+        </span>
       </Tooltip>
     </>
   );

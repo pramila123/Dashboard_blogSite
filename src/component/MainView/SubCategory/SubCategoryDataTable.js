@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
@@ -16,18 +16,8 @@ import ViewIcon from "../../ViewComponent/ViewIcon";
 import EditIcon from "../../EditComponent/EditIcon";
 import DeleteIcon from "../../DeleteComponent/DeleteIcon";
 import SuccessAlert from "../../SuccessAlertComponent/SuccessAlert";
-
-function createData(name, calories, fat, carbs, protein) {
-  return { name, calories, fat, carbs, protein };
-}
-
-const rows = [
-  createData("Frozen yoghurt", 159, 6.0, 24, 4.0),
-  createData("Ice cream sandwich", 237, 9.0, 37, 4.3),
-  createData("Eclair", 262, 16.0, 24, 6.0),
-  createData("Cupcake", 305, 3.7, 67, 4.3),
-  createData("Gingerbread", 356, 16.0, 49, 3.9),
-];
+import { SubCategoryContext } from "../../../Store/Context/SubCategoryContext";
+import axios from "axios";
 
 const useStyle = makeStyles((theme) => ({
   tableRow: {
@@ -43,11 +33,59 @@ const useStyle = makeStyles((theme) => ({
 
 export default function SubCategoryDataTable() {
   const classes = useStyle();
+
+  const { subCategory, subCategoryDispatch, getSubCategoryFormDb } =
+    useContext(SubCategoryContext);
+
   useEffect(() => {
     $(document).ready(function () {
       $("#example2").DataTable();
     });
   });
+
+  const deleteSubCategryFromDb = (id) => {
+    axios
+      .delete("http://localhost:4000/subCategory/" + id, {
+        headers: {
+          Authorization: localStorage.getItem("token"),
+        },
+      })
+      .then((res) => {
+        // console.log(res.data.status);
+
+        if (res.data.status == "ok") {
+          subCategoryDispatch({
+            type: "DELETE_SUBCATEGORY",
+            subCategory: {
+              success: true,
+            },
+          });
+          // handleClickOpen();
+          getSubCategoryFormDb();
+        } else {
+          subCategoryDispatch({
+            type: "DELETE_SUBCATEGORY",
+            subCategory: {
+              success: false,
+            },
+          });
+          // handleClickOpen();
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
+  const updateCategoryFormDb = (data) => {
+    // console.log(data);
+    subCategoryDispatch({
+      type: "PASSING_UPDATE_SUBCATEGORY",
+      subCategory: {
+        data: data,
+      },
+    });
+  };
 
   return (
     <TableContainer>
@@ -62,6 +100,9 @@ export default function SubCategoryDataTable() {
               SN
             </TableCell>
             <TableCell className={classes.tableRow} align="left">
+              Sub Category
+            </TableCell>
+            <TableCell className={classes.tableRow} align="left">
               Category
             </TableCell>
 
@@ -70,10 +111,10 @@ export default function SubCategoryDataTable() {
             </TableCell>
           </TableRow>
         </TableHead>
-        <TableBody stripedRows>
-          {rows.map((row, index) => (
+        <TableBody>
+          {subCategory.data.map((row, index) => (
             <TableRow
-              key={row.name}
+              key={index}
               style={
                 index % 2
                   ? { backgroundColor: "#e0e0d1" }
@@ -86,13 +127,23 @@ export default function SubCategoryDataTable() {
                 {index + 1}
               </TableCell>
               <TableCell align="left" className={classes.tableRow}>
-                {row.name}
+                {row.subcategoryName}
+              </TableCell>
+              <TableCell align="left" className={classes.tableRow}>
+                {row.categoryName}
               </TableCell>
 
               <TableCell align="right">
-                <ViewIcon />
-                <EditIcon />
-                <DeleteIcon />
+                <EditIcon
+                  updateFromDb={() => {
+                    updateCategoryFormDb(row);
+                  }}
+                />
+                <DeleteIcon
+                  deleteFromDb={() => {
+                    deleteSubCategryFromDb(row.id);
+                  }}
+                />
               </TableCell>
             </TableRow>
           ))}

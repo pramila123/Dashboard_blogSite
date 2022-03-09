@@ -1,21 +1,21 @@
 import axios from "axios";
 import React, { useState, createContext, useReducer } from "react";
-import { CategoryReducer } from "../Reducer/CategoryReducer";
+import { SubCategoryReducer } from "../Reducer/SubCategoryReducer";
 
-export const CategoryContext = createContext();
+export const SubCategoryContext = createContext();
 
 function CategoryContextProvider(props) {
-  const getCategoryFormDb = () => {
+  const getSubCategoryFormDb = () => {
     axios
-      .get("http://localhost:4000/category/", {
+      .get("http://localhost:4000/subCategory/", {
         headers: {
           Authorization: localStorage.getItem("token"),
         },
       })
       .then((res) => {
-        dispatch({
-          type: "GET_CATEGORY_SUCCESS",
-          category: {
+        subCategoryDispatch({
+          type: "GET_SUBCATEGORY",
+          subCategory: {
             data: res.data.data,
           },
         });
@@ -25,12 +25,14 @@ function CategoryContextProvider(props) {
       });
   };
 
-  const [category, dispatch] = useReducer(CategoryReducer, {
+  const [subCategory, subCategoryDispatch] = useReducer(SubCategoryReducer, {
     data: [
       {
+        id: "---",
+        subcategoryName: "---",
+        categoryId: "---",
         categoryName: "---",
         createdAt: "---",
-        id: "---",
         updatedAt: "---",
       },
     ],
@@ -40,17 +42,21 @@ function CategoryContextProvider(props) {
     loading: false,
     checkUpdate: false,
     updatedData: {
+      id: " ",
+      subcategoryName: " ",
+      categoryId: " ",
       categoryName: " ",
       createdAt: " ",
-      id: " ",
       updatedAt: " ",
     },
   });
 
   return (
-    <CategoryContext.Provider value={{ category, dispatch, getCategoryFormDb }}>
+    <SubCategoryContext.Provider
+      value={{ subCategory, subCategoryDispatch, getSubCategoryFormDb }}
+    >
       {props.children}
-    </CategoryContext.Provider>
+    </SubCategoryContext.Provider>
   );
 }
 

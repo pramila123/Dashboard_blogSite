@@ -1,21 +1,15 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import Tooltip from "@material-ui/core/Tooltip";
 import Zoom from "@material-ui/core/Zoom";
 import { AiOutlineDelete } from "react-icons/ai";
 import { makeStyles } from "@material-ui/core/styles";
-import Alert from "@mui/material/Alert";
 
-import Snackbar from "@material-ui/core/Snackbar";
 import Dialog from "@mui/material/Dialog";
-import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
-import DialogContentText from "@mui/material/DialogContentText";
-import DialogTitle from "@mui/material/DialogTitle";
+import IconButton from "@mui/material/IconButton";
 import Slide from "@mui/material/Slide";
-import Button from "@mui/material/Button";
 import styled from "styled-components";
-import { flexbox } from "@mui/system";
-import AddButton from "../ButtonComponent/AddButton";
+
 import { Container } from "@material-ui/core";
 import image from "../../Assets/info.png";
 const StyledDialog = styled(Dialog)`
@@ -113,7 +107,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
 });
 
-const DeleteIcon = (props) => {
+const DeleteIcon = ({ deleteFromDb }) => {
   const classes = useStyle();
 
   //ConfirmationDialog
@@ -128,25 +122,19 @@ const DeleteIcon = (props) => {
     setOpenConfimationDialog(false);
   };
 
-  //for alert dialog box after submitting.
-  const [openDialog, setOpenDialog] = useState(false);
-  const handleClickOpen = () => {
-    setOpenDialog(true);
-  };
-  const handleCloseDialog = () => {
-    setOpenDialog(false);
-  };
-
   return (
     <>
       <Tooltip title="Delete" TransitionComponent={Zoom} arrow>
-        <AiOutlineDelete
-          className={classes.deleteIcon}
-          onClick={handleClickOpenConfimationDialog}
-          // onClick={handleClickOpen}
-        />
+        {/* <IconButton> */}
+        <span>
+          <AiOutlineDelete
+            role="button"
+            className={classes.deleteIcon}
+            onClick={handleClickOpenConfimationDialog}
+          />
+        </span>
+        {/* </IconButton> */}
       </Tooltip>
-      {/* Confirmation Dialog */}
 
       <StyledDialog
         open={openConfimationDialog}
@@ -165,7 +153,8 @@ const DeleteIcon = (props) => {
             <button
               type="button"
               onClick={() => {
-                handleClickOpen();
+                deleteFromDb();
+
                 handleCloseConfimationDialog();
               }}
               className={classes.button}
@@ -183,36 +172,7 @@ const DeleteIcon = (props) => {
             </button>
           </Container>
         </DialogContent>
-        {/* <DialogActions className={classes.ButtonDiv}>
-          <Button onClick={handleCloseConfimationDialog}>Disagree</Button>
-          <Button
-            onClick={() => {
-              handleClickOpen();
-              handleCloseConfimationDialog();
-            }}
-          >
-            Agree
-          </Button>
-        </DialogActions> */}
       </StyledDialog>
-
-      {/* Snack bar */}
-      <Snackbar
-        open={openDialog}
-        autoHideDuration={1500}
-        onClose={handleCloseDialog}
-      >
-        <Alert
-          onClose={handleCloseDialog}
-          style={{
-            color: "#fff",
-            backgroundColor: "#333A56",
-            borderLeft: "1px green",
-          }}
-        >
-          Deleted Successfully !
-        </Alert>
-      </Snackbar>
     </>
   );
 };

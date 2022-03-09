@@ -13,9 +13,12 @@ const Sidebar = ({ isItemSelected, click }) => {
   const menuItemsJSX = menuItems.map((item, index) => {
     const isItemSelected = selected === item.name;
     return (
-      <Link to={item.to} style={{ textDecoration: "none", color: "#fff" }}>
+      <Link
+        key={index}
+        to={item.to}
+        style={{ textDecoration: "none", color: "#fff" }}
+      >
         <s.MenuItem
-          key={index}
           isItemSelected={isItemSelected}
           onClick={() => handleMenuItemClick(item.name)}
         >

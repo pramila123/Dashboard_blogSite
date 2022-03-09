@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Root = styled.div`
   padding-right: 2px;
-  margin-top: 7px;
+  // margin-top: 1px;
   background-color: #efefef;
 `;
 export const Container = styled.div`

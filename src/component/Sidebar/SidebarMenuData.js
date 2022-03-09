@@ -7,7 +7,7 @@ import { FaNetworkWired } from "react-icons/fa";
 import { AiFillEdit } from "react-icons/ai";
 
 export const menuItems = [
-  { name: "Dashboard", to: "/admin/", icon: <FaHome /> },
+  { name: "Dashboard", to: "/", icon: <FaHome /> },
   { name: "Category", to: "/admin/category", icon: <IoGitNetworkSharp /> },
   { name: "Sub Category", to: "/admin/subcategory", icon: <FaNetworkWired /> },
   { name: "Products", to: "/admin/products", icon: <BsFillBriefcaseFill /> },

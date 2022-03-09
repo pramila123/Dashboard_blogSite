@@ -5,8 +5,8 @@ export const TopNav = styled.nav`
   width: ${({ click }) => (click ? "100%" : "82%")};
   float: right;
   color: #000;
-  // border-bottom: 1px solid white;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-bottom: 1px solid #b8b894;
+  // box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 `;
 export const TopContainer = styled.div`
   display: flex;

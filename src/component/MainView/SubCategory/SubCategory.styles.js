@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Root = styled.div`
   padding-right: 2px;
-  margin-top: 7px;
+  // margin-top: 7px;
   background-color: #efefef;
 `;
 export const Container = styled.div`
@@ -79,4 +79,10 @@ export const SubCategoryTableDiv = styled.div`
 
 export const SelectTextfieldMainDiv = styled.div`
   display: flex;
+`;
+
+export const Title = styled.div`
+  font-size: 0.9rem;
+  color: #444;
+  margin-bottom: 0.5rem;
 `;

@@ -1,13 +1,17 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import * as c from "./SubCategory.styles";
-import Button from "@material-ui/core/Button";
 import SubCategoryAdd from "./SubCategoryAdd";
 import AddButton from "../../ButtonComponent/AddButton";
+import { SubCategoryContext } from "../../../Store/Context/SubCategoryContext";
 
 const CategoryHeding = () => {
-  const [show, setShow] = useState(false);
+  const { subCategoryDispatch } = useContext(SubCategoryContext);
+
   const showAddField = () => {
-    setShow(!show);
+    subCategoryDispatch({
+      type: "UPDATE_SUCCESS",
+      category: {},
+    });
   };
   return (
     <>
@@ -17,7 +21,7 @@ const CategoryHeding = () => {
           <c.SubHeading>View Sub Category Detail</c.SubHeading>
         </c.HeadingMianDiv>
         <c.ButtonMainDiv>
-          {/* <AddButton showAddField={showAddField} name="Add Sub Category" /> */}
+          <AddButton showAddField={showAddField} name="Add Sub Category" />
         </c.ButtonMainDiv>
       </c.HadingButtonMainDiv>
       {/* {show ? <SubCategoryAdd /> : " "} */}

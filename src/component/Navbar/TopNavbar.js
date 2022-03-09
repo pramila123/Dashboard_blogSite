@@ -9,16 +9,14 @@ const TopNavbar = () => {
   };
   const navitem = data.map((navbaritem, index) => {
     return (
-      <>
-        <n.ItemLinks
-          color={navbaritem.color}
-          to={navbaritem.link}
-          key={index}
-          onClick={logout}
-        >
-          {navbaritem.icon}
-        </n.ItemLinks>
-      </>
+      <n.ItemLinks
+        color={navbaritem.color}
+        to={navbaritem.link}
+        key={index}
+        onClick={logout}
+      >
+        {navbaritem.icon}
+      </n.ItemLinks>
     );
   });
   return (

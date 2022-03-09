@@ -19,15 +19,15 @@ const useStyle = makeStyles((theme) => ({
   },
 }));
 
-const EditIcon = () => {
+const EditIcon = ({ updateFromDb }) => {
   const classes = useStyle();
 
   return (
     <>
       <Tooltip title="Edit" TransitionComponent={Zoom} arrow>
-        <Link>
-          <AiOutlineEdit className={classes.editIcon} />
-        </Link>
+        <span>
+          <AiOutlineEdit className={classes.editIcon} onClick={updateFromDb} />
+        </span>
       </Tooltip>
     </>
   );
